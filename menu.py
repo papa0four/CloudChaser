@@ -11,6 +11,7 @@ def menu():
     print("9.\tTencent Cloud")
     print("10.\tAlibaba Cloud")
     print("11.\tBaidu")
+    print("12.\tMicrosoft Azure")
     menu_select = input()
     provider = ""
     try:
@@ -37,6 +38,8 @@ def menu():
             provider = "Alibaba Cloud"
         elif value is 11:
             provider = "Baidu"
+        elif value is 12:
+            provider = "Microsoft Azure"
         else:
             print("Invalid menu option selection entered")
             provider = ""
