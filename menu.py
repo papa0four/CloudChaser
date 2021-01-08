@@ -13,6 +13,9 @@ def menu():
     print("11.\tBaidu")
     print("12.\tMicrosoft Azure")
     print("13.\tGoogle Cloud Platform")
+    print("14.\tOracle")
+    print("15.\tDigital Ocean")
+    print("16.\tLinode")
     menu_select = input("/> ")
     provider = ""
     try:
@@ -43,6 +46,12 @@ def menu():
             provider = "Microsoft Azure"
         elif value == 13:
             provider = "Google Cloud Platform"
+        elif value == 14:
+            provider = "Oracle"
+        elif value == 15:
+            provider = "Digital Ocean"
+        elif value == 16:
+            provider = "Linode"
         else:
             print("Invalid menu option selection entered")
             provider = "Error: Menu Option Invalid"
