@@ -16,29 +16,29 @@ def menu():
     provider = ""
     try:
         value = int(menu_select)
-        if value is 1:
+        if value == 1:
             provider = "AWS"
-        elif value is 2:
+        elif value == 2:
             provider = "IBM Cloud"
-        elif value is 3:
+        elif value == 3:
             provider = "Verizon Cloud"
-        elif value is 4:
+        elif value == 4:
             provider = "Kamatera"
-        elif value is 5:
+        elif value == 5:
             provider = "Vultr"
-        elif value is 6:
+        elif value == 6:
             provider = "Rackspace"
-        elif value is 7:
+        elif value == 7:
             provider = "Salesforce"
-        elif value is 8:
+        elif value == 8:
             provider = "M247"
-        elif value is 9:
+        elif value == 9:
             provider = "Tencent Cloud"
-        elif value is 10:
+        elif value == 10:
             provider = "Alibaba Cloud"
-        elif value is 11:
+        elif value == 11:
             provider = "Baidu"
-        elif value is 12:
+        elif value == 12:
             provider = "Microsoft Azure"
         else:
             print("Invalid menu option selection entered")
