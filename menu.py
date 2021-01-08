@@ -12,7 +12,8 @@ def menu():
     print("10.\tAlibaba Cloud")
     print("11.\tBaidu")
     print("12.\tMicrosoft Azure")
-    menu_select = input()
+    print("13.\tGoogle Cloud Platform")
+    menu_select = input("/> ")
     provider = ""
     try:
         value = int(menu_select)
@@ -40,9 +41,11 @@ def menu():
             provider = "Baidu"
         elif value == 12:
             provider = "Microsoft Azure"
+        elif value == 13:
+            provider = "Google Cloud Platform"
         else:
             print("Invalid menu option selection entered")
-            provider = ""
+            provider = "Error: Menu Option Invalid"
         return provider
     except ValueError:
         print("Please select a number representing a provider as shown on the menu")
