@@ -12,21 +12,24 @@ def extract_data(file: IO) -> Union[str, str]:
     with open(file, "r") as file_ptr:
         line = file_ptr.readlines()
         for i in line:
-            for junk in mess:
-                if junk in i:
-                    i = i.replace(junk, ',')
-            i = i.split(',')
-            i = list(filter(None, i))
-            i.pop(0)
-            provider = ' '.join(i[3:5])
-            ips = ' '.join(i[0:3])
-            ranges.append(ips)
+            try:
+                for junk in mess:
+                    if junk in i:
+                        i = i.replace(junk, ',')
+                i = i.split(',')
+                i = list(filter(None, i))
+                i.pop(0)
+                provider = ' '.join(i[3:5])
+                ips = ' '.join(i[0:3])
+                ranges.append(ips)
+            except (ValueError, IndexError):
+                continue
     ranges.sort()
     return(provider, ranges)
 
 def convert_to_json(file: IO, key: str, val: List):
     data_set = { key: val }
-    json_dump = json.dumps(data_set)
+    json_dump = json.dumps(data_set, sort_keys=True, indent=4)
     file = file + ".json"
     cwd = os.getcwd()
     path = cwd + "/" + file
